@@ -2,7 +2,7 @@
 
 namespace Magecom\Blog\Api\Schema;
 
-interface BlogPostToStoreSchemaInterface
+interface PostToStoreSchemaInterface
 {
     const TABLE_NAME      = 'magecom_blog_post_to_store';
     

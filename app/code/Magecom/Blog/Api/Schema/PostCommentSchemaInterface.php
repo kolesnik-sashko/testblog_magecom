@@ -2,7 +2,7 @@
 
 namespace Magecom\Blog\Api\Schema;
 
-interface BlogPostCommentSchemaInterface
+interface PostCommentSchemaInterface
 {
     const TABLE_NAME          = 'magecom_blog_post_comment';
     

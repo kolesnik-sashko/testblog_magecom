@@ -2,7 +2,7 @@
 
 namespace Magecom\Blog\Api\Schema;
 
-interface BlogAuthorSchemaInterface
+interface AuthorSchemaInterface
 {
     const TABLE_NAME        = 'magecom_blog_author';
     

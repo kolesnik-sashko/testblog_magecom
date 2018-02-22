@@ -3,7 +3,7 @@
 namespace Magecom\Blog\Api\Schema;
 
 
-interface BlogPostSchemaInterface
+interface PostSchemaInterface
 {
     const TABLE_NAME         = 'magecom_blog_post';
     
