@@ -1,0 +1,21 @@
+<?php /** @var Magecom\Blog\Block\Blog $block */?>
+<?php $collection = $block->getPosts(); ?>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Author Id</th>
+        <th>Content</th>
+        <th>Created At</th>
+    </tr>
+    <?php foreach ($collection as $post) :?>
+        <tr>
+            <td><?php echo $post->getiD(); ?></td>
+            <td><?php echo $post->getName(); ?></td>
+            <td><?php echo $post->getAuthorId(); ?></td>
+            <td><?php echo $post->getDescription(); ?></td>
+            <td><?php echo $post->getCreatedAt(); ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
