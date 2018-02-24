@@ -24,10 +24,10 @@ interface PostCommentInterface
     public function getList(SearchCriteriaInterface $criteria);
 
     /**
-     * @param PostCommentDataInterface $post
+     * @param PostCommentDataInterface $postComment
      * @return PostCommentInterface
      */
-    public function delete(PostCommentDataInterface $post);
+    public function delete(PostCommentDataInterface $postComment);
 
     /**
      * @param integer $id
@@ -36,8 +36,8 @@ interface PostCommentInterface
     public function deleteById($id);
 
     /**
-     * @param PostCommentDataInterface $post
+     * @param PostCommentDataInterface $postComment
      * @return PostCommentInterface
      */
-    public function save(PostCommentDataInterface $post);
+    public function save(PostCommentDataInterface $postComment);
 }
