@@ -4,23 +4,23 @@ namespace Magecom\Blog\Block;
 
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
-use Magecom\Blog\Model\ResourceModel\Post\CollectionFactory as PostCollectionFactory;
+use Magecom\Blog\Model\Repository\Post as PostRepository;
 
 class Blog extends Template
 {
-    /** @var PostCollectionFactory  */
-    protected $postCollectionFactory;
+    /** @var PostRepository  */
+    protected $postRepository;
 
     public function __construct(
         Context $context,
-        PostCollectionFactory $postCollectionFactory,
+        PostRepository $postRepository,
         array $data
     ){
-        $this->postCollectionFactory = $postCollectionFactory;
+        $this->postRepository = $postRepository;
         parent::__construct($context, $data);
     }
 
     public function getPosts(){
-        return $this->postCollectionFactory->create();
+        return $this->postRepository->getCollection();
     }
 }
