@@ -1,0 +1,34 @@
+<pulsestorm_simple xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <dataSource name="pulsestorm_simple_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <!-- the PHP class that implements a data provider -->
+            <argument name="class" xsi:type="string">Pulsestorm\SimpleUiComponent\Model\DataProvider</argument>
+
+            <!-- redundant with the `dataSource` name -->
+            <argument name="name" xsi:type="string">pulsestorm_simple_data_source</argument>
+
+            <!-- required: means ui components are meant to work with models -->
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+
+            <!-- required: means ui components are meant to work with URL passing -->
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </argument>
+
+    </dataSource>
+    <htmlContent name="first_ever_child">
+        <argument name="block" xsi:type="object">Magento\Framework\View\Element\Text</argument>
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="component" xsi:type="string">Pulsestorm_SimpleUiComponent/js/pulsestorm_simple_component</item>
+            </item>
+        </argument>
+    </htmlContent>
+    <htmlContent name="second_ever_child">
+        <argument name="block" xsi:type="object">Magento\Framework\View\Element\Text</argument>
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="component" xsi:type="string">Pulsestorm_SimpleUiComponent/js/pulsestorm_simple_component</item>
+            </item>
+        </argument>
+    </htmlContent>
+</pulsestorm_simple>
