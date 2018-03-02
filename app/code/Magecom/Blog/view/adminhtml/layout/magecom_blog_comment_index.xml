@@ -1,0 +1,12 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="menu">
+            <action method="setActive">
+                <argument name="itemId" xsi:type="string">Magecom_Blog::blog</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <uiComponent name="magecom_blog_comment_listing"/>
+        </referenceContainer>
+    </body>
+</page>
