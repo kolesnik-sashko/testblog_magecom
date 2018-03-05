@@ -81,7 +81,7 @@ class InstallData implements InstallDataInterface
                     
                     $comment->setPostId($postIndex)
                             ->setAuthorId($authorIndex)
-                            ->setCommentText(sprintf('Comment #%d to post #d', $commentIndex, $postIndex));
+                            ->setCommentText(sprintf('Comment #%d to post #%d', $commentIndex, $postIndex));
 //                            ->setCreatedAt('0000-00-00 00-00');
                     try{
                         $comment->save();

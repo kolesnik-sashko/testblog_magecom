@@ -5,7 +5,8 @@
             <resource id="Magento_Backend::admin">
                 <resource id="Magecom_Blog::blog" title="Magecom Blog" sortOrder="51">
                     <resource id="Magecom_Blog::post" title="Posts" sortOrder="10"/>
-                    <resource id="Magecom_Blog::comment" title="Posts" sortOrder="20"/>
+                    <resource id="Magecom_Blog::comment" title="Comments" sortOrder="20"/>
+                    <resource id="Magecom_Blog::author" title="Authors" sortOrder="30"/>
                 </resource>
             </resource>
         </resources>

@@ -2,12 +2,11 @@
 
 namespace Magecom\Blog\Controller\Adminhtml\Post;
 
+use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
-use Magento\Backend\App\Action;
 
-
-class Index extends Action
+class View extends Action
 {
     protected $resultPageFactory;
 
@@ -22,15 +21,11 @@ class Index extends Action
 
     public function execute()
     {
-        $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend((__('Posts')));
-
-        return $resultPage;
+        return $this->resultPageFactory->create();
     }
 
     protected function _isAllowed()
     {
         return $this->_authorization->isAllowed('Magecom_Blog::post');
     }
-
 }

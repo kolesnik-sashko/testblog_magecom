@@ -3,6 +3,7 @@
     <menu>
         <add id="Magecom_Blog::blog" title="Magecom Blog" module="Magecom_Blog" sortOrder="51" resource="Magecom_Blog::blog"/>
         <add id="Magecom_Blog::post" title="Manage Posts" module="Magecom_Blog" sortOrder="10" action="magecom_blog/post" resource="Magecom_Blog::post" parent="Magecom_Blog::blog"/>
-        <add id="Magecom_Blog::comment" title="Manage Comments" module="Magecom_Blog" sortOrder="99" parent="Magecom_Blog::blog" action="magecom_blog/comment" resource="Magecom_Blog::comment"/>
+        <add id="Magecom_Blog::comment" title="Manage Comments" module="Magecom_Blog" sortOrder="20" parent="Magecom_Blog::blog" action="magecom_blog/comment" resource="Magecom_Blog::comment"/>
+        <add id="Magecom_Blog::author" title="Manage Authors" module="Magecom_Blog" sortOrder="30" parent="Magecom_Blog::blog" action="magecom_blog/author" resource="Magecom_Blog::author"/>
     </menu>
 </config>

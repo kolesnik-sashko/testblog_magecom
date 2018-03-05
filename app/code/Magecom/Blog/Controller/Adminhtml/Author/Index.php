@@ -1,11 +1,10 @@
 <?php
 
-namespace Magecom\Blog\Controller\Adminhtml\Post;
+namespace Magecom\Blog\Controller\Adminhtml\Author;
 
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Backend\App\Action;
-
 
 class Index extends Action
 {
@@ -23,14 +22,13 @@ class Index extends Action
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend((__('Posts')));
+        $resultPage->getConfig()->getTitle()->prepend((__('Authors')));
 
         return $resultPage;
     }
 
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('Magecom_Blog::post');
+        return $this->_authorization->isAllowed('Magecom_Blog::author');
     }
-
 }
