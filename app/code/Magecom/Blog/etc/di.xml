@@ -42,4 +42,17 @@
             </argument>
         </arguments>
     </type>
+    <preference for="Magecom\Blog\Api\Repository\AuthorInterface"
+                type="Magecom\Blog\Model\Repository\Author" />
+    <preference for="Magecom\Blog\Api\Repository\PostInterface"
+                type="Magecom\Blog\Model\Repository\Post" />
+    <preference for="Magecom\Blog\Api\Repository\PostCommentInterface"
+                type="Magecom\Blog\Model\Repository\PostComment" />
+
+    <preference for="Magecom\Blog\Api\Data\AuthorInterface"
+                type="Magecom\Blog\Model\Author" />
+    <preference for="Magecom\Blog\Api\Data\PostInterface"
+                type="Magecom\Blog\Model\Post" />
+    <preference for="Magecom\Blog\Api\Data\PostCommentInterface"
+                type="Magecom\Blog\Model\PostComment" />
 </config>
