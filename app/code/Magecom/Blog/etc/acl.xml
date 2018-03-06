@@ -6,7 +6,12 @@
                 <resource id="Magecom_Blog::blog" title="Magecom Blog" sortOrder="51">
                     <resource id="Magecom_Blog::post" title="Posts" sortOrder="10"/>
                     <resource id="Magecom_Blog::comment" title="Comments" sortOrder="20"/>
-                    <resource id="Magecom_Blog::author" title="Authors" sortOrder="30"/>
+                    <resource id="Magecom_Blog::author" title="Authors" sortOrder="30">
+                        <resource id="Magecom_Blog::author_edit" title="Authors Edit" sortOrder="10"/>
+                        <resource id="Magecom_Blog::author_save" title="Authors Save" sortOrder="20"/>
+                        <resource id="Magecom_Blog::author_delete" title="Authors Delete" sortOrder="30"/>
+                        <resource id="Magecom_Blog::author_grid" title="Authors Grid" sortOrder="40"/>
+                    </resource>
                 </resource>
             </resource>
         </resources>
