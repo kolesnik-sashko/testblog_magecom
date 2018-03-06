@@ -139,8 +139,8 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="indexField" xsi:type="string">entity_id</item>
-                    <item name="viewUrlPath" xsi:type="string">magecom_blog/comment/view</item>
-                    <item name="urlEntityParamName" xsi:type="string">comment_id</item>
+                    <item name="viewUrlPath" xsi:type="string">magecom_blog/comment/edit</item>
+                    <item name="urlEntityParamName" xsi:type="string">id</item>
                 </item>
             </argument>
         </actionsColumn>
