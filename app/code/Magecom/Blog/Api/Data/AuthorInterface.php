@@ -4,7 +4,9 @@ namespace Magecom\Blog\Api\Data;
 
 interface AuthorInterface
 {
-    const CACHE_TAG = 'blog_author';
+    const CACHE_TAG     = 'blog_author';
+
+    const REGISTRY_KEY  = 'magecom_blog_author';
     
     /**
      * @return integer
