@@ -2,35 +2,11 @@
 
 namespace Magecom\Blog\Controller\Adminhtml\Comment;
 
-use Magento\Backend\App\Action\Context;
-use Magento\Framework\View\Result\PageFactory;
-use Magento\Backend\App\Action;
+use Magecom\Blog\Controller\Adminhtml\CommentAbstract;
 
-
-class Index extends Action
+class Index extends CommentAbstract
 {
-    protected $resultPageFactory;
-
-    public function __construct(
-        Context $context,
-        PageFactory $resultPageFactory
-    )
-    {
-        parent::__construct($context);
-        $this->resultPageFactory = $resultPageFactory;
-    }
-
-    public function execute()
-    {
-        $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend((__('Comments')));
-
-        return $resultPage;
-    }
-
-    protected function _isAllowed()
-    {
-        return $this->_authorization->isAllowed('Magecom_Blog::comment');
-    }
-
+    const ACL_RESOURCE      = 'Magecom_Blog::comment_grid';
+    const PAGE_TITLE        = 'Comments Grid';
+    const BREADCRUMB_TITLE  = 'Comments Grid';
 }
