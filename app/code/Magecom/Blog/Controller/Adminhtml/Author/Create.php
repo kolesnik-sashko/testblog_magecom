@@ -7,8 +7,7 @@ use Magecom\Blog\Api\Data\AuthorInterface;
 
 class Create extends AuthorAbstract
 {
-    const ACL_RESOURCE      = 'Magecom_Blog::author_create';
-    const MENU_ITEM         = 'Magecom_Blog::author_create';
+    const ACL_RESOURCE      = 'Magecom_Blog::author_create';    
     const PAGE_TITLE        = 'Add Author';
     const BREADCRUMB_TITLE  = 'Add Author';
 

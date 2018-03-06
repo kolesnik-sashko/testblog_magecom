@@ -21,7 +21,7 @@ use Magecom\Blog\Model\AuthorFactory;
 abstract class AuthorAbstract extends Action
 {
     const ACL_RESOURCE          = 'Magecom_Blog::author';
-    const MENU_ITEM             = 'Magecom_Blog::author';
+    const MENU_ITEM             = 'Magecom_Blog::blog';
     const PAGE_TITLE            = 'Blog Authors';
     const BREADCRUMB_TITLE      = 'Authors';
     const QUERY_PARAM_ID        = 'id';

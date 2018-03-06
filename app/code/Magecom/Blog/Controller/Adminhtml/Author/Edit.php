@@ -9,8 +9,7 @@ use Magecom\Blog\Controller\Adminhtml\AuthorAbstract;
 
 class Edit extends AuthorAbstract
 {
-    const ACL_RESOURCE      = 'Magecom_Blog::author_edit';
-    const MENU_ITEM         = 'Magecom_Blog::author_edit';
+    const ACL_RESOURCE      = 'Magecom_Blog::author_edit';    
     const PAGE_TITLE        = 'Edit Author';
     const BREADCRUMB_TITLE  = 'Edit Author';
 
