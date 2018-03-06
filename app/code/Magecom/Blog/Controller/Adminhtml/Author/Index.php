@@ -2,33 +2,11 @@
 
 namespace Magecom\Blog\Controller\Adminhtml\Author;
 
-use Magento\Backend\App\Action\Context;
-use Magento\Framework\View\Result\PageFactory;
-use Magento\Backend\App\Action;
-
-class Index extends Action
+use Magecom\Blog\Controller\Adminhtml\AuthorAbstract;
+class Index extends AuthorAbstract
 {
-    protected $resultPageFactory;
-
-    public function __construct(
-        Context $context,
-        PageFactory $resultPageFactory
-    )
-    {
-        parent::__construct($context);
-        $this->resultPageFactory = $resultPageFactory;
-    }
-
-    public function execute()
-    {
-        $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend((__('Authors')));
-
-        return $resultPage;
-    }
-
-    protected function _isAllowed()
-    {
-        return $this->_authorization->isAllowed('Magecom_Blog::author');
-    }
+    const ACL_RESOURCE      = 'Magecom_Blog::author_grid';
+    const MENU_ITEM         = 'Magecom_Blog::author_grid';
+    const PAGE_TITLE        = 'Authors Grid';
+    const BREADCRUMB_TITLE  = 'Authors Grid';
 }
