@@ -6,6 +6,8 @@ namespace Magecom\Blog\Api\Data;
 interface PostCommentInterface
 {
     const CACHE_TAG = 'post_comment';
+
+    const REGISTRY_KEY  = 'magecom_blog_post_comment';
     
     /**
      * @return integer
