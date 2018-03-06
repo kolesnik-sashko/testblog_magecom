@@ -4,8 +4,18 @@
         <resources>
             <resource id="Magento_Backend::admin">
                 <resource id="Magecom_Blog::blog" title="Magecom Blog" sortOrder="51">
-                    <resource id="Magecom_Blog::post" title="Posts" sortOrder="10"/>
-                    <resource id="Magecom_Blog::comment" title="Comments" sortOrder="20"/>
+                    <resource id="Magecom_Blog::post" title="Posts" sortOrder="10">
+                        <resource id="Magecom_Blog::post_edit" title="Posts Edit" sortOrder="10"/>
+                        <resource id="Magecom_Blog::post_save" title="Posts Save" sortOrder="20"/>
+                        <resource id="Magecom_Blog::post_delete" title="Posts Delete" sortOrder="30"/>
+                        <resource id="Magecom_Blog::post_grid" title="Posts Grid" sortOrder="40"/>
+                    </resource>
+                    <resource id="Magecom_Blog::comment" title="Comments" sortOrder="20">
+                        <resource id="Magecom_Blog::comment_edit" title="Comments Edit" sortOrder="10"/>
+                        <resource id="Magecom_Blog::comment_save" title="Comments Save" sortOrder="20"/>
+                        <resource id="Magecom_Blog::comment_delete" title="Comments Delete" sortOrder="30"/>
+                        <resource id="Magecom_Blog::comment_grid" title="Comments Grid" sortOrder="40"/>
+                    </resource>
                     <resource id="Magecom_Blog::author" title="Authors" sortOrder="30">
                         <resource id="Magecom_Blog::author_edit" title="Authors Edit" sortOrder="10"/>
                         <resource id="Magecom_Blog::author_save" title="Authors Save" sortOrder="20"/>
