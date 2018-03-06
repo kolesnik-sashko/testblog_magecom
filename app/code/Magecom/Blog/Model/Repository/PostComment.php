@@ -53,7 +53,9 @@ class PostComment implements PostCommentInterface
     {
         $postComment = $this->getPostCommentObject();
 
-        return $this->resourceModel->load($postComment, $id);
+        $this->resourceModel->load($postComment, $id);
+
+        return $postComment;
     }
 
     /**
@@ -72,6 +74,7 @@ class PostComment implements PostCommentInterface
     public function delete(PostCommentDataInterface $postComment)
     {
         $this->resourceModel->delete($postComment);
+        
         return $this;
     }
 

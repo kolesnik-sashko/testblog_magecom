@@ -53,8 +53,10 @@ class Post implements PostInterface
     public function get($id)
     {
         $post = $this->getPostObject();
-
-        return $this->resourceModel->load($post, $id);
+        
+        $this->resourceModel->load($post, $id);
+        
+        return $post;
     }
 
     /**
@@ -73,6 +75,7 @@ class Post implements PostInterface
     public function delete(PostDataInterface $post)
     {
         $this->resourceModel->delete($post);
+        
         return $this;
     }
 

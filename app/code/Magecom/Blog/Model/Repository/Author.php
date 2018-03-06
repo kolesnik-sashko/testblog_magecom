@@ -29,7 +29,7 @@ class Author implements AuthorInterface
     /**
      * @var ResourceModel
      */
-    protected $resourceModel;
+    public $resourceModel;
 
     /**
      * Author constructor.
@@ -54,8 +54,8 @@ class Author implements AuthorInterface
     public function get($id)
     {
         $author =  $this->getAuthorObject();
-
-        return $this->resourceModel->load($author, $id);
+        $this->resourceModel->load($author, $id);
+        return $author;
     }
 
     /**
