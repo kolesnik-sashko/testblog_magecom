@@ -13,7 +13,6 @@ use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 use Magecom\Blog\Model\Post as Model;
 use Magecom\Blog\Model\ResourceModel\Post as ResourceModel;
-use Magecom\Blog\Api\Schema\AuthorSchemaInterface;
 use Magecom\Blog\Api\Schema\PostSchemaInterface;
 
 class Collection extends AbstractCollection
@@ -34,18 +33,5 @@ class Collection extends AbstractCollection
         $this->_init(Model::class, ResourceModel::class);
         parent::__construct($entityFactory, $logger, $fetchStrategy, $eventManager, $connection, $resource);
         $this->storeManager = $storeManager;
-    }
-
-    protected function _initSelect()
-    {
-        parent::_initSelect();
-
-        $this->getSelect()->joinLeft(
-            ['authorTable' => $this->getTable(AuthorSchemaInterface::TABLE_NAME)],
-            'main_table.author_id = authorTable.entity_id',
-            [
-                'author_name' => "CONCAT(authorTable.first_name, ' ', authorTable.last_name)"
-            ]
-        );
-    }
+    }    
 }

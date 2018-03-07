@@ -14,7 +14,7 @@ use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 use Magento\Framework\View\Element\UiComponent\DataProvider\Document;
 
 use Magecom\Blog\Model\ResourceModel\Post\Collection as GridCollection;
-
+use Magecom\Blog\Api\Schema\AuthorSchemaInterface;
 
 class Collection extends GridCollection implements SearchResultInterface
 {
@@ -124,5 +124,18 @@ class Collection extends GridCollection implements SearchResultInterface
     public function setItems(array $items = null)
     {
         return $this;
+    }
+
+    protected function _initSelect()
+    {
+        parent::_initSelect();
+
+        $this->getSelect()->joinLeft(
+            ['authorTable' => $this->getTable(AuthorSchemaInterface::TABLE_NAME)],
+            'main_table.author_id = authorTable.entity_id',
+            [
+                'author_name' => "CONCAT(authorTable.first_name, ' ', authorTable.last_name)"
+            ]
+        );
     }
 }

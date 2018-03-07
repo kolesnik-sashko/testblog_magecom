@@ -23,7 +23,7 @@ abstract class CommentAbstract extends Action
     const ACL_RESOURCE          = 'Magecom_Blog::comment';
     const MENU_ITEM             = 'Magecom_Blog::blog';
     const PAGE_TITLE            = 'Blog Comments';
-    const BREADCRUMB_TITLE      = 'Posts';
+    const BREADCRUMB_TITLE      = 'Comments';
     const QUERY_PARAM_ID        = 'id';
 
     /** @var Registry  */
