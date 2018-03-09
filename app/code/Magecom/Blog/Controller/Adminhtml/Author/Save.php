@@ -14,7 +14,7 @@ class Save extends AuthorAbstract
 
         if ($isPost) {
             $model = $this->getModel();
-            $formData = $this->getRequest()->getParam('author');
+            $formData = $this->getRequest()->getParams();
 
             if(!empty($formData[AuthorSchemaInterface::ID_COLUMN])) {
                 $id = $formData[AuthorSchemaInterface::ID_COLUMN];
