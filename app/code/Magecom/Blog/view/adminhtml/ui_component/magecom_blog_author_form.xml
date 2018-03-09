@@ -10,29 +10,27 @@
         </item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
         <item name="buttons" xsi:type="array">
-            <item name="save" xsi:type="array">
-                <item name="name" xsi:type="string">save</item>
-                <item name="label" xsi:type="string" translate="true">Save</item>
-                <item name="class" xsi:type="string">primary</item>
-                <item name="url" xsi:type="url" path="*/*/save" />
-            </item>
+            <item name="back" xsi:type="string">Magecom\Blog\Block\Adminhtml\Author\Edit\Button\Back</item>
+            <item name="delete" xsi:type="string">Magecom\Blog\Block\Adminhtml\Author\Edit\Button\Delete</item>
+            <item name="save_and_continue" xsi:type="string">Magecom\Blog\Block\Adminhtml\Author\Edit\Button\SaveAndContinue</item>
+            <item name="save" xsi:type="string">Magecom\Blog\Block\Adminhtml\Author\Edit\Button\Save</item>
         </item>
     </argument>
     <dataSource name="magecom_blog_author_form_data_source">
-        <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">Magecom\Blog\Ui\AuthorDataProvider</argument>
-            <argument name="name" xsi:type="string">magecom_blog_author_form_data_source</argument>
-            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
-            <argument name="requestFieldName" xsi:type="string">id</argument>
-        </argument>
         <argument name="data" xsi:type="array">
             <item name="js_config" xsi:type="array">
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
             </item>
-            <item name="config" xsi:type="array">
-                <item name="submit_url" xsi:type="string">*/*/save</item>
-            </item>
         </argument>
+        <settings>
+            <submitUrl path="magecom_blog/author/save"/>
+        </settings>
+        <dataProvider class="Magecom\Blog\Ui\AuthorDataProvider" name="magecom_blog_author_form_data_source">
+            <settings>
+                <requestFieldName>entity_id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
     </dataSource>
     <fieldset name="general">
         <argument name="data" xsi:type="array">
@@ -41,6 +39,18 @@
                 <item name="collapsible" xsi:type="boolean">false</item>
             </item>
         </argument>
+        <field name="entity_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataScope" xsi:type="string">entity_id</item>
+                </item>
+            </argument>
+            <settings>
+                <visible>false</visible>
+            </settings>
+        </field>
         <field name="first_name">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
