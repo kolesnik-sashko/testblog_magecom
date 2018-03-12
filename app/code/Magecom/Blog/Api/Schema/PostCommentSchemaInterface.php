@@ -11,4 +11,5 @@ interface PostCommentSchemaInterface
     const AUTHOR_ID_COLUMN    = 'author_id';
     const COMMENT_TEXT_COLUMN = 'comment_text';
     const CREATED_AT_COLUMN   = 'created_at';
+    const STATUS_COLUMN       = 'status';
 }
