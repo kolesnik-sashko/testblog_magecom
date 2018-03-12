@@ -14,6 +14,8 @@ class PostComment
     extends AbstractModel
     implements IdentityInterface, PostCommentInterface
 {
+    const STATUS_ENABLE = 1;
+    const STATUS_DISABLE = 0;
 
     public function _construct()
     {
