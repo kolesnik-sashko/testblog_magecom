@@ -46,6 +46,7 @@ class InstallData implements InstallDataInterface
     /** {@inheritdoc} */
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
+        $globalPostIndex = 1;
         for ($authorIndex = 1; $authorIndex <= 10; $authorIndex++)
         {
             $author = $this->authorFactory->create();
@@ -61,17 +62,18 @@ class InstallData implements InstallDataInterface
             {
                 $post = $this->postFactory->create();
 
-                $post->setAuthorId($authorIndex)
-                     ->setName(sprintf('Post Name #%d', $postIndex))
-                     ->setDescription(sprintf('Post Description #%d', $postIndex))
-                     ->setUrlKey(sprintf('post%d', $postIndex))
-                     ->setImage(sprintf('postimage%d.jpg', $postIndex))
+                $post->setAuthorId($author->getId())
+                     ->setName(sprintf('Post Name #%d', $globalPostIndex))
+                     ->setDescription(sprintf('Post Description #%d', $globalPostIndex))
+                     ->setUrlKey(sprintf('post%d', $globalPostIndex))
+                     ->setImage(sprintf('postimage%d.jpg', $globalPostIndex))
                      ->setStatus(Post::STATUS_ENABLE);
 //                     ->setCreatedAt('0000-00-00 00-00')
 //                     ->setUpdatedAt('0000-00-00 00-00');
 
                 try{
                     $post->save();
+                    $globalPostIndex++;
                 }catch (\Exception $e){
                     $this->logger->error($e);
                 }
@@ -79,9 +81,9 @@ class InstallData implements InstallDataInterface
                 {
                     $comment = $this->postCommentFactory->create();
                     
-                    $comment->setPostId($postIndex)
-                            ->setAuthorId($authorIndex)
-                            ->setCommentText(sprintf('Comment #%d to post #%d', $commentIndex, $postIndex));
+                    $comment->setPostId($post->getId())
+                            ->setAuthorId($author->getId())
+                            ->setCommentText(sprintf('Comment #%d to post #%d', $commentIndex, $post->getId()));
 //                            ->setCreatedAt('0000-00-00 00-00');
                     try{
                         $comment->save();
