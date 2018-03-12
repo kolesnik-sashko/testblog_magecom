@@ -24,7 +24,7 @@ abstract class AuthorAbstract extends Action
     const MENU_ITEM             = 'Magecom_Blog::blog';
     const PAGE_TITLE            = 'Blog Authors';
     const BREADCRUMB_TITLE      = 'Authors';
-    const QUERY_PARAM_ID        = 'entity_id';
+    const QUERY_PARAM_ID        = 'id';
 
     /** @var Registry  */
     protected $registry;

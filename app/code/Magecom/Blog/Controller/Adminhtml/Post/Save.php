@@ -14,7 +14,7 @@ class Save extends PostAbstract
 
         if ($isPost) {
             $model = $this->getModel();
-            $formData = $this->getRequest()->getParam('post');
+            $formData = $this->getRequest()->getParams();
 
             if(!empty($formData[PostSchemaInterface::ID_COLUMN])) {
                 $id = $formData[PostSchemaInterface::ID_COLUMN];
@@ -24,7 +24,7 @@ class Save extends PostAbstract
             $model->setData($formData);
 
             try {
-                $model = $this->repository->save($model);
+                $this->repository->save($model);
                 $this->messageManager->addSuccessMessage(__('Post has been saved.'));
                 if ($this->getRequest()->getParam('back')) {
                     return $this->_redirect('*/*/edit', ['id' => $model->getId(), '_current' => true]);

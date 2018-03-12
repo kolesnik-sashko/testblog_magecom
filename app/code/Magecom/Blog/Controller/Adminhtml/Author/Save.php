@@ -24,7 +24,7 @@ class Save extends AuthorAbstract
             $model->setData($formData);
 
             try {
-                $model = $this->repository->save($model);
+                $this->repository->save($model);
                 $this->messageManager->addSuccessMessage(__('Author has been saved.'));
                 if ($this->getRequest()->getParam('back')) {
                     return $this->_redirect('*/*/edit', ['id' => $model->getId(), '_current' => true]);

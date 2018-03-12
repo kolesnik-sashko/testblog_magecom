@@ -14,7 +14,7 @@ class Save extends CommentAbstract
 
         if ($isPost) {
             $model = $this->getModel();
-            $formData = $this->getRequest()->getParam('comment');
+            $formData = $this->getRequest()->getParams();
 
             if(!empty($formData[PostCommentSchemaInterface::ID_COLUMN])) {
                 $id = $formData[PostCommentSchemaInterface::ID_COLUMN];
@@ -24,7 +24,7 @@ class Save extends CommentAbstract
             $model->setData($formData);
 
             try {
-                $model = $this->repository->save($model);
+                $this->repository->save($model);
                 $this->messageManager->addSuccessMessage(__('Comment has been saved.'));
                 if ($this->getRequest()->getParam('back')) {
                     return $this->_redirect('*/*/edit', ['id' => $model->getId(), '_current' => true]);

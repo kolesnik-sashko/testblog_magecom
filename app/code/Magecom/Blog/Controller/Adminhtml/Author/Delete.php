@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 06.03.18
- * Time: 13:00
- */
 
 namespace Magecom\Blog\Controller\Adminhtml\Author;
 
