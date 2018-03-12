@@ -184,6 +184,13 @@ class InstallSchema implements InstallSchemaInterface
                     'Comment description'
                 )
                 ->addColumn(
+                    PostCommentSchemaInterface::STATUS_COLUMN,
+                    Table::TYPE_SMALLINT,
+                    1,
+                    [],
+                    'Status'
+                )
+                ->addColumn(
                     PostCommentSchemaInterface::CREATED_AT_COLUMN,
                     Table::TYPE_TIMESTAMP,
                     null,
