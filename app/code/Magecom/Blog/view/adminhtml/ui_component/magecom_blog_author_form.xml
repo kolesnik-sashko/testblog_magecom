@@ -23,11 +23,11 @@
             </item>
         </argument>
         <settings>
-            <submitUrl path="magecom_blog/author/save"/>
+            <submitUrl path="*/*/save"/>
         </settings>
         <dataProvider class="Magecom\Blog\Ui\AuthorDataProvider" name="magecom_blog_author_form_data_source">
             <settings>
-                <requestFieldName>entity_id</requestFieldName>
+                <requestFieldName>id</requestFieldName>
                 <primaryFieldName>entity_id</primaryFieldName>
             </settings>
         </dataProvider>
