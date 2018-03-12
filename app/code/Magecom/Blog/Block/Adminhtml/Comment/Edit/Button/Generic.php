@@ -1,29 +1,29 @@
 <?php
 
-namespace Magecom\Blog\Block\Adminhtml\Author\Edit\Button;
+namespace Magecom\Blog\Block\Adminhtml\Comment\Edit\Button;
 
 use Magento\Backend\Block\Widget\Context;
-use Magecom\Blog\Api\Repository\AuthorInterface;
+use Magecom\Blog\Api\Repository\PostCommentInterface;
 use Magento\Framework\Exception\NoSuchEntityException;
 
 class Generic
 {
     protected $context;
     
-    protected $authorRepository;
+    protected $commentRepository;
     
     public function __construct(
         Context $context,
-        AuthorInterface $authorRepository
+        PostCommentInterface $commentRepository
     ) {
         $this->context = $context;
-        $this->authorRepository = $authorRepository;
+        $this->commentRepository = $commentRepository;
     }
 
-    public function getAuthorId()
+    public function getCommentId()
     {
         try {
-            return $this->authorRepository->get(
+            return $this->commentRepository->get(
                 $this->context->getRequest()->getParam('id')
             )->getId();
         } catch (NoSuchEntityException $e) {

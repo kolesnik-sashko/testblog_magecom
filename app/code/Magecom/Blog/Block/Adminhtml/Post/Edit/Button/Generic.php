@@ -1,29 +1,29 @@
 <?php
 
-namespace Magecom\Blog\Block\Adminhtml\Author\Edit\Button;
+namespace Magecom\Blog\Block\Adminhtml\Post\Edit\Button;
 
 use Magento\Backend\Block\Widget\Context;
-use Magecom\Blog\Api\Repository\AuthorInterface;
+use Magecom\Blog\Api\Repository\PostInterface;
 use Magento\Framework\Exception\NoSuchEntityException;
 
 class Generic
 {
     protected $context;
     
-    protected $authorRepository;
+    protected $postRepository;
     
     public function __construct(
         Context $context,
-        AuthorInterface $authorRepository
+        PostInterface $postRepository
     ) {
         $this->context = $context;
-        $this->authorRepository = $authorRepository;
+        $this->postRepository = $postRepository;
     }
 
-    public function getAuthorId()
+    public function getPostId()
     {
         try {
-            return $this->authorRepository->get(
+            return $this->postRepository->get(
                 $this->context->getRequest()->getParam('id')
             )->getId();
         } catch (NoSuchEntityException $e) {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Magecom\Blog\Block\Adminhtml\Author\Edit\Button;
+namespace Magecom\Blog\Block\Adminhtml\Comment\Edit\Button;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
@@ -27,6 +27,6 @@ class SaveAndContinue extends Generic implements ButtonProviderInterface
 
     public function getSaveUrl()
     {
-        return $this->getUrl('*/*/save', ['id' => $this->getAuthorId(), 'back' => false]);
+        return $this->getUrl('*/*/save', ['id' => $this->getCommentId(), 'back' => false]);
     }
 }

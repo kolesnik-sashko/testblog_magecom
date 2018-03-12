@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 09.03.18
- * Time: 17:28
- */
 
-namespace Magecom\Blog\Block\Adminhtml\Author\Edit\Button;
+namespace Magecom\Blog\Block\Adminhtml\Post\Edit\Button;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
@@ -30,6 +24,6 @@ class Delete extends Generic implements ButtonProviderInterface
     
     public function getDeleteUrl()
     {
-        return $this->getUrl('*/*/delete', ['id' => $this->getAuthorId()]);
+        return $this->getUrl('*/*/delete', ['id' => $this->getPostId()]);
     }
 }
