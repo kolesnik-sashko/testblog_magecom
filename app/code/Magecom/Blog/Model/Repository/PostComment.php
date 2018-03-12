@@ -8,7 +8,7 @@ use Magecom\Blog\Model\ResourceModel\PostComment\Collection as PostCommentCollec
 use Magecom\Blog\Model\ResourceModel\PostComment\CollectionFactory;
 use Magecom\Blog\Model\PostCommentFactory;
 use Magento\Framework\Api\SearchCriteriaInterface;
-use Magecom\Blog\Model\ResourceModel\Post as ResourceModel;
+use Magecom\Blog\Model\ResourceModel\PostComment as ResourceModel;
 use Magecom\Blog\Model\PostComment as PostCommentModel;
 
 class PostComment implements PostCommentInterface
