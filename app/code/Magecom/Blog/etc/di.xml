@@ -42,6 +42,53 @@
             </argument>
         </arguments>
     </type>
+    <virtualType name="MagecomBlogImageUploaderUiDataProviderImageFormModifierPool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="image_data" xsi:type="array">
+                    <item name="class" xsi:type="string">Magecom\Blog\Ui\DataProvider\Post\Form\Modifier\PostData</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magecom\Blog\Ui\PostDataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="object">MagecomBlogImageUploaderUiDataProviderImageFormModifierPool</argument>
+        </arguments>
+    </type>
+
+
+    <virtualType name="MagecomBlogImageUploader" type="Magecom\Blog\Model\Uploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="const">Magecom\Blog\Model\Uploader::IMAGE_TMP_PATH</argument>
+            <argument name="basePath" xsi:type="const">Magecom\Blog\Model\Uploader::IMAGE_PATH</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magecom\Blog\Model\UploaderPool">
+        <arguments>
+            <argument name="uploaders" xsi:type="array">
+                <item name="image" xsi:type="string">MagecomBlogImageUploader</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magecom\Blog\Controller\Adminhtml\Post\Upload">
+        <arguments>
+            <argument name="uploader" xsi:type="object">MagecomBlogImageUploader</argument>
+        </arguments>
+    </type>
+    <type name="Magecom\Blog\Ui\Component\Listing\Column\Image">
+        <arguments>
+            <argument name="imageModel" xsi:type="object">MagecomBlogImageUploader</argument>
+        </arguments>
+    </type>
+
     <preference for="Magecom\Blog\Api\Repository\AuthorInterface"
                 type="Magecom\Blog\Model\Repository\Author" />
     <preference for="Magecom\Blog\Api\Repository\PostInterface"

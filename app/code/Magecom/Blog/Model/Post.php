@@ -5,6 +5,11 @@ namespace Magecom\Blog\Model;
 use Magento\Framework\Model\AbstractModel;
 use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Framework\Stdlib\DateTime;
+use Magento\Framework\Data\Collection\AbstractDb;
+use Magento\Framework\Model\Context;
+use Magento\Framework\Model\ResourceModel\AbstractResource;
+use Magento\Framework\Registry;
+use Magento\Framework\Exception\LocalizedException;
 
 use Magecom\Blog\Api\Data\PostInterface;
 use Magecom\Blog\Api\Schema\PostSchemaInterface;
@@ -16,6 +21,20 @@ class Post
 {
     const STATUS_ENABLE = 1;
     const STATUS_DISABLE = 0;
+
+    protected $uploaderPool;
+
+    public function __construct(
+        Context $context,
+        Registry $registry,
+        UploaderPool $uploaderPool,
+        AbstractResource $resource = null,
+        AbstractDb $resourceCollection = null,
+        array $data = []
+    ) {
+        parent::__construct($context, $registry, $resource, $resourceCollection, $data);
+        $this->uploaderPool    = $uploaderPool;
+    }
     
     public function _construct()
     {
@@ -138,5 +157,22 @@ class Post
     public function getIdentities()
     {
         return [sprintf("%s_%s", PostInterface::CACHE_TAG, $this->getId())];
+    }
+
+    public function getImageUrl()
+    {
+        $url = false;
+        $image = $this->getImage();
+        if ($image) {
+            if (is_string($image)) {
+                $uploader = $this->uploaderPool->getUploader('image');
+                $url = $uploader->getBaseUrl().$uploader->getBasePath().$image;
+            } else {
+                throw new LocalizedException(
+                    __('Something went wrong while getting the image url.')
+                );
+            }
+        }
+        return $url;
     }
 }

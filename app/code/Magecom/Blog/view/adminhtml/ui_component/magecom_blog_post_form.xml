@@ -123,15 +123,14 @@
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="sortOrder" xsi:type="number">6</item>
-                    <item name="source" xsi:type="string">store_logo</item>
-                    <item name="label" xsi:type="string" translate="true">Product Page Label</item>
+                    <item name="label" xsi:type="string" translate="true">Image</item>
                     <item name="visible" xsi:type="boolean">true</item>
                     <item name="formElement" xsi:type="string">fileUploader</item>
-                    <item name="previewTmpl" xsi:type="string">Magento_Catalog/image-preview</item>
+                    <item name="previewTmpl" xsi:type="string">Magecom_Blog/image-preview</item>
                     <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
                     <item name="required" xsi:type="boolean">false</item>
                     <item name="uploaderConfig" xsi:type="array">
-                        <item name="url" xsi:type="url" path=""/>
+                        <item name="url" xsi:type="url" path="*/*/upload/field/image"/>
                     </item>
                 </item>
             </argument>
