@@ -1,0 +1,11 @@
+<?php /** @var Magecom\Blog\Block\LayoutProcessor $block */ ?>
+<div id="post_list" data-bind="scope:'post_list'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+      {
+          "#post_list": {
+              "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */ echo $block->getJsLayout();?>
+          }
+      }
+    </script>
+</div>
