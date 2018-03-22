@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magecom_DFS::all" resource="Magecom_DFS::all" title="Discount for subscribe"
+             module="Magecom_DFS" sortOrder="100"/>
+        <add id="Sysint_MagentoAcademy::system_config" title="Config" translate="title" module="Magecom_DFS"
+             sortOrder="10" parent="Magecom_DFS::all" action="adminhtml/system_config/edit/section/magecom_dfs"
+             resource="Magecom_DFS::system_config"/>
+    </menu>
+</config>
