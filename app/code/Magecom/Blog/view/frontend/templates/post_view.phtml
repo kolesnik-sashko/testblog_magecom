@@ -1,0 +1,11 @@
+<?php /** @var Magecom\Blog\Block\LayoutProcessor $block */ ?>
+<div id="post_view" data-bind="scope:'post_view'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+      {
+          "#post_view": {
+              "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */ echo $block->getJsLayout();?>
+          }
+      }
+    </script>
+</div>

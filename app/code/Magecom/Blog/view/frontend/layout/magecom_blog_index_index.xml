@@ -3,19 +3,33 @@
     <referenceContainer name="content">
         <!--<block class="Magecom\Blog\Block\Blog" name="magecom_blog" template="Magecom_Blog::blog.phtml" />-->
 
-        <block class="Magecom\Blog\Block\LayoutProcessor" name="post_list" template="Magecom_Blog::post_list.phtml" cacheable="false">
-            <arguments>
-                <argument name="jsLayout" xsi:type="array">
-                    <item name="components" xsi:type="array">
-                        <item name="post_list" xsi:type="array">
-                            <item name="component" xsi:type="string">Magecom_Blog/js/view/post_list</item>
-                            <item name="config" xsi:type="array">
-                                <item name="template" xsi:type="string">Magecom_Blog/view/post_list</item>
-                            </item>
-                        </item>
-                    </item>
-                </argument>
-            </arguments>
-        </block>
+        <!--<block class="Magecom\Blog\Block\LayoutProcessor" name="post_list" template="Magecom_Blog::post_list.phtml" cacheable="false">-->
+            <!--<arguments>-->
+                <!--<argument name="jsLayout" xsi:type="array">-->
+                    <!--<item name="components" xsi:type="array">-->
+                        <!--<item name="post_list" xsi:type="array">-->
+                            <!--<item name="component" xsi:type="string">Magecom_Blog/js/view/post_list</item>-->
+                            <!--<item name="config" xsi:type="array">-->
+                                <!--<item name="template" xsi:type="string">Magecom_Blog/view/post_list</item>-->
+                            <!--</item>-->
+                        <!--</item>-->
+                    <!--</item>-->
+                <!--</argument>-->
+            <!--</arguments>-->
+        <!--</block>-->
+
+        <!--<block class="Magecom\Blog\Block\LayoutProcessor" before="-" cacheable="false" template="Magecom_Blog::grid.phtml">-->
+            <!--<arguments>-->
+                <!--<argument name="jsLayout" xsi:type="array">-->
+                    <!--<item name="components" xsi:type="array">-->
+                        <!--<item name="sample-grid" xsi:type="array">-->
+                            <!--<item name="component" xsi:type="string">Magecom_Blog/js/view/grid</item>-->
+                            <!--<item name="collection" xsi:type="string">Magecom\Blog\Model\ResourceModel\Post\Grid\Collection</item>-->
+                        <!--</item>-->
+                    <!--</item>-->
+                <!--</argument>-->
+            <!--</arguments>-->
+        <!--</block>-->
+        <uiComponent name="post_list"/>
     </referenceContainer>
 </page>

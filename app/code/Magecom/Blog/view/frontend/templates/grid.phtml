@@ -1,0 +1,10 @@
+<div id="grid" data-bind="scope:'sample-grid'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+    {
+        "#grid": {
+            "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */ echo $block->getJsLayout();?>
+        }
+    }
+    </script>
+</div>

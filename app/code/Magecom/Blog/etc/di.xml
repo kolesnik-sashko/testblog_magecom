@@ -14,6 +14,13 @@
             </argument>
         </arguments>
     </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="post_list_data_source" xsi:type="string">Magecom\Blog\Model\ResourceModel\Post\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
     <type name="Magecom\Blog\Model\ResourceModel\PostComment\Grid\Collection">
         <arguments>
             <argument name="mainTable" xsi:type="string">magecom_blog_post_comment</argument>
@@ -57,6 +64,14 @@
             <argument name="pool" xsi:type="object">MagecomBlogImageUploaderUiDataProviderImageFormModifierPool</argument>
         </arguments>
     </type>
+
+    <!--<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">-->
+        <!--<arguments>-->
+            <!--<argument name="collections" xsi:type="array">-->
+                <!--<item name="post_list_data_source" xsi:type="string">Magecom\Blog\Model\ResourceModel\Author\Post\Collection</item>-->
+            <!--</argument>-->
+        <!--</arguments>-->
+    <!--</type>-->
 
 
     <virtualType name="MagecomBlogImageUploader" type="Magecom\Blog\Model\Uploader">

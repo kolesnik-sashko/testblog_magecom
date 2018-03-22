@@ -1,21 +1,20 @@
 <?php
-namespace Magecom\Blog\Block;
+
+namespace Magecom\Blog\Block\Post;
 
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Checkout\Model\CompositeConfigProvider;
 use Magecom\Blog\Model\ResourceModel\Post\Grid\CollectionFactory;
 
-class LayoutProcessor extends Template
+class View extends Template
 {
-
     protected $configProvider;
 
-    protected $profileCollection;
+    protected $layoutProcessors;
 
     protected $collection;
-
-
+    
     public function __construct(
         Context $context,
         CompositeConfigProvider $configProvider,
@@ -36,19 +35,6 @@ class LayoutProcessor extends Template
             $this->jsLayout = $processor->process($this->jsLayout);
         }
 
-        $this->jsLayout['components']['sample-grid']['data'] = $this->getItemsJson();
-
         return parent::getJsLayout();
-    }
-    
-    protected function getItemsJson()
-    {
-        $result = [];
-        foreach ($this->collection->getData() as $item)
-        {
-            $result[] = $item;
-        }
-        
-        return json_encode($result);
     }
 }
