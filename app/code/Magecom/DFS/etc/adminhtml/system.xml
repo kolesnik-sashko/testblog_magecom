@@ -32,14 +32,16 @@
             </group>
             <group id="discount_setting" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Discount Setting</label>
-                <field id="sales_rule" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Sales Rule</label>
-                </field>
-                <field id="discount_type" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="discount_type" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Discount type</label>
+                    <source_model>Magecom\DFS\Model\System\Source\SimpleAction</source_model>
                 </field>
                 <field id="discount_rate" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Discount rate</label>
+                </field>
+                <field id="discount_format" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount format</label>
+                    <source_model>Magento\SalesRule\Model\System\Config\Source\Coupon\Format</source_model>
                 </field>
                 <field id="discount_prefix" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Prefix discount code</label>
@@ -49,6 +51,7 @@
                 </field>
                 <field id="discount_length" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Length of discount code</label>
+                    <comment>Excluding prefix, suffix and separators.</comment>
                 </field>
             </group>
         </section>
