@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <magecom_dfs>
+            <general>
+                <is_enabled>1</is_enabled>
+                <subscriber_use>1</subscriber_use>
+            </general>
+            <popup_setting>
+                <delay>3000</delay>
+                <text>1</text>
+                <placeholder>Enter your email</placeholder>
+            </popup_setting>
+            <discount_setting>
+                <discount_type>1</discount_type>
+                <discount_rate>1</discount_rate>
+                <discount_format>Magento\SampleShippingProvider\Model\Carrier</discount_format>
+                <discount_prefix>DFS</discount_prefix>
+                <discount_suffix>DFS</discount_suffix>
+                <discount_length>10</discount_length>
+            </discount_setting>
+        </magecom_dfs>
+    </default>
+</config>
